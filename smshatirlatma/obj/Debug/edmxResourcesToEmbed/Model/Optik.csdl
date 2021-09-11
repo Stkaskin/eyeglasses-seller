@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OptikDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Borc">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="islemturu" Type="Int32" />
+    <Property Name="zaman" Type="DateTime" Precision="3" />
+    <Property Name="kayitid" Type="Int32" />
+    <Property Name="satisid" Type="Int32" />
+    <Property Name="tutar" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="alacakzaman" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="kayit" Relationship="Self.FK_Borc_kayit" FromRole="Borc" ToRole="kayit" />
+    <NavigationProperty Name="satis" Relationship="Self.FK_Borc_satis" FromRole="Borc" ToRole="satis" />
+  </EntityType>
+  <EntityType Name="CamTipleri">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ad" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CamKodu" Type="Int32" />
+    <NavigationProperty Name="Gozluk" Relationship="Self.FK_dbo_Gozluk_dbo_CamTipleri_camid" FromRole="CamTipleri" ToRole="Gozluk" />
+  </EntityType>
+  <EntityType Name="Gozluk">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kod" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="adet" Type="Int32" />
+    <Property Name="sekilid" Type="Int32" />
+    <Property Name="camid" Type="Int32" />
+    <Property Name="markaid" Type="Int32" />
+    <Property Name="gonderim" Type="Boolean" />
+    <NavigationProperty Name="CamTipleri" Relationship="Self.FK_dbo_Gozluk_dbo_CamTipleri_camid" FromRole="Gozluk" ToRole="CamTipleri" />
+    <NavigationProperty Name="Marka" Relationship="Self.FK_dbo_Gozluk_dbo_Marka_markaid" FromRole="Gozluk" ToRole="Marka" />
+    <NavigationProperty Name="SekilTipi" Relationship="Self.FK_dbo_Gozluk_dbo_SekilTipi_sekilid" FromRole="Gozluk" ToRole="SekilTipi" />
+    <NavigationProperty Name="satis" Relationship="Self.FK_dbo_satis_dbo_Gozluk_Gozlukid" FromRole="Gozluk" ToRole="satis" />
+  </EntityType>
+  <EntityType Name="kayit">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="soyad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="telefon" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="alim" Type="DateTime" Precision="3" />
+    <Property Name="sonrakialim" Type="DateTime" Precision="3" />
+    <Property Name="hak" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="smsgonderim" Type="Int32" />
+    <Property Name="smsdurum" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Borc" Relationship="Self.FK_Borc_kayit" FromRole="kayit" ToRole="Borc" />
+    <NavigationProperty Name="MesajKontrol" Relationship="Self.FK_dbo_MesajKontrol_dbo_kayit_kayitid" FromRole="kayit" ToRole="MesajKontrol" />
+    <NavigationProperty Name="satis" Relationship="Self.FK_dbo_satis_dbo_kayit_Kayitid" FromRole="kayit" ToRole="satis" />
+  </EntityType>
+  <EntityType Name="Marka">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ad" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Markakodu" Type="Int32" />
+    <NavigationProperty Name="Gozluk" Relationship="Self.FK_dbo_Gozluk_dbo_Marka_markaid" FromRole="Marka" ToRole="Gozluk" />
+  </EntityType>
+  <EntityType Name="MesajKontrol">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kayitid" Type="Int32" />
+    <Property Name="mesaj" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="durum" Type="Boolean" />
+    <NavigationProperty Name="kayit" Relationship="Self.FK_dbo_MesajKontrol_dbo_kayit_kayitid" FromRole="MesajKontrol" ToRole="kayit" />
+  </EntityType>
+  <EntityType Name="satis">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tutar" Type="Int32" Nullable="false" />
+    <Property Name="zaman" Type="DateTime" Precision="3" />
+    <Property Name="Kayitid" Type="Int32" />
+    <Property Name="Gozlukid" Type="Int32" />
+    <NavigationProperty Name="Borc" Relationship="Self.FK_Borc_satis" FromRole="satis" ToRole="Borc" />
+    <NavigationProperty Name="Gozluk" Relationship="Self.FK_dbo_satis_dbo_Gozluk_Gozlukid" FromRole="satis" ToRole="Gozluk" />
+    <NavigationProperty Name="kayit" Relationship="Self.FK_dbo_satis_dbo_kayit_Kayitid" FromRole="satis" ToRole="kayit" />
+  </EntityType>
+  <EntityType Name="SekilTipi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ad" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Gozluk" Relationship="Self.FK_dbo_Gozluk_dbo_SekilTipi_sekilid" FromRole="SekilTipi" ToRole="Gozluk" />
+  </EntityType>
+  <EntityType Name="Sms">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="özel" Type="Boolean" />
+    <Property Name="zaman" Type="DateTime" Precision="3" />
+    <Property Name="mesajmetni" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="kisiadı" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="kisitel" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Borc_kayit">
+    <End Role="kayit" Type="Self.kayit" Multiplicity="0..1" />
+    <End Role="Borc" Type="Self.Borc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kayit">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Borc">
+        <PropertyRef Name="kayitid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Borc_satis">
+    <End Role="satis" Type="Self.satis" Multiplicity="0..1" />
+    <End Role="Borc" Type="Self.Borc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="satis">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Borc">
+        <PropertyRef Name="satisid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Gozluk_dbo_CamTipleri_camid">
+    <End Role="CamTipleri" Type="Self.CamTipleri" Multiplicity="0..1" />
+    <End Role="Gozluk" Type="Self.Gozluk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CamTipleri">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Gozluk">
+        <PropertyRef Name="camid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Gozluk_dbo_Marka_markaid">
+    <End Role="Marka" Type="Self.Marka" Multiplicity="0..1" />
+    <End Role="Gozluk" Type="Self.Gozluk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marka">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Gozluk">
+        <PropertyRef Name="markaid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Gozluk_dbo_SekilTipi_sekilid">
+    <End Role="SekilTipi" Type="Self.SekilTipi" Multiplicity="0..1" />
+    <End Role="Gozluk" Type="Self.Gozluk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SekilTipi">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Gozluk">
+        <PropertyRef Name="sekilid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_satis_dbo_Gozluk_Gozlukid">
+    <End Role="Gozluk" Type="Self.Gozluk" Multiplicity="0..1" />
+    <End Role="satis" Type="Self.satis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gozluk">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="satis">
+        <PropertyRef Name="Gozlukid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_MesajKontrol_dbo_kayit_kayitid">
+    <End Role="kayit" Type="Self.kayit" Multiplicity="0..1" />
+    <End Role="MesajKontrol" Type="Self.MesajKontrol" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kayit">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="MesajKontrol">
+        <PropertyRef Name="kayitid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_satis_dbo_kayit_Kayitid">
+    <End Role="kayit" Type="Self.kayit" Multiplicity="0..1" />
+    <End Role="satis" Type="Self.satis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kayit">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="satis">
+        <PropertyRef Name="Kayitid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="OptikDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+    <EntitySet Name="Borc" EntityType="Self.Borc" />
+    <EntitySet Name="CamTipleri" EntityType="Self.CamTipleri" />
+    <EntitySet Name="Gozluk" EntityType="Self.Gozluk" />
+    <EntitySet Name="kayit" EntityType="Self.kayit" />
+    <EntitySet Name="Marka" EntityType="Self.Marka" />
+    <EntitySet Name="MesajKontrol" EntityType="Self.MesajKontrol" />
+    <EntitySet Name="satis" EntityType="Self.satis" />
+    <EntitySet Name="SekilTipi" EntityType="Self.SekilTipi" />
+    <EntitySet Name="Sms" EntityType="Self.Sms" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <AssociationSet Name="FK_Borc_kayit" Association="Self.FK_Borc_kayit">
+      <End Role="kayit" EntitySet="kayit" />
+      <End Role="Borc" EntitySet="Borc" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Borc_satis" Association="Self.FK_Borc_satis">
+      <End Role="satis" EntitySet="satis" />
+      <End Role="Borc" EntitySet="Borc" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Gozluk_dbo_CamTipleri_camid" Association="Self.FK_dbo_Gozluk_dbo_CamTipleri_camid">
+      <End Role="CamTipleri" EntitySet="CamTipleri" />
+      <End Role="Gozluk" EntitySet="Gozluk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Gozluk_dbo_Marka_markaid" Association="Self.FK_dbo_Gozluk_dbo_Marka_markaid">
+      <End Role="Marka" EntitySet="Marka" />
+      <End Role="Gozluk" EntitySet="Gozluk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Gozluk_dbo_SekilTipi_sekilid" Association="Self.FK_dbo_Gozluk_dbo_SekilTipi_sekilid">
+      <End Role="SekilTipi" EntitySet="SekilTipi" />
+      <End Role="Gozluk" EntitySet="Gozluk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_satis_dbo_Gozluk_Gozlukid" Association="Self.FK_dbo_satis_dbo_Gozluk_Gozlukid">
+      <End Role="Gozluk" EntitySet="Gozluk" />
+      <End Role="satis" EntitySet="satis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_MesajKontrol_dbo_kayit_kayitid" Association="Self.FK_dbo_MesajKontrol_dbo_kayit_kayitid">
+      <End Role="kayit" EntitySet="kayit" />
+      <End Role="MesajKontrol" EntitySet="MesajKontrol" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_satis_dbo_kayit_Kayitid" Association="Self.FK_dbo_satis_dbo_kayit_Kayitid">
+      <End Role="kayit" EntitySet="kayit" />
+      <End Role="satis" EntitySet="satis" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

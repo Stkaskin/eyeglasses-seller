@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="49b814af7e1d49278f1bb8237a7ccf1c" Name="Diagram1" ZoomLevel="53">
+        <EntityTypeShape EntityType="OptikDbModel.C__MigrationHistory" Width="1.5" PointX="14.625" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="OptikDbModel.Borc" Width="1.5" PointX="14.375" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OptikDbModel.CamTipleri" Width="1.5" PointX="7.625" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OptikDbModel.Gozluk" Width="1.5" PointX="9.875" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OptikDbModel.kayit" Width="1.5" PointX="9.875" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OptikDbModel.Marka" Width="1.5" PointX="7.625" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OptikDbModel.MesajKontrol" Width="1.5" PointX="12.125" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OptikDbModel.satis" Width="1.5" PointX="12.125" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OptikDbModel.SekilTipi" Width="1.5" PointX="7.625" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="OptikDbModel.Sms" Width="1.5" PointX="14.625" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="OptikDbModel.sysdiagrams" Width="1.5" PointX="16.625" PointY="0.625" IsExpanded="true" />
+        <AssociationConnector Association="OptikDbModel.FK_Borc_kayit" ManuallyRouted="false" />
+        <AssociationConnector Association="OptikDbModel.FK_Borc_satis" ManuallyRouted="false" />
+        <AssociationConnector Association="OptikDbModel.FK_dbo_Gozluk_dbo_CamTipleri_camid" ManuallyRouted="false" />
+        <AssociationConnector Association="OptikDbModel.FK_dbo_Gozluk_dbo_Marka_markaid" ManuallyRouted="false" />
+        <AssociationConnector Association="OptikDbModel.FK_dbo_Gozluk_dbo_SekilTipi_sekilid" ManuallyRouted="false" />
+        <AssociationConnector Association="OptikDbModel.FK_dbo_satis_dbo_Gozluk_Gozlukid" ManuallyRouted="false" />
+        <AssociationConnector Association="OptikDbModel.FK_dbo_MesajKontrol_dbo_kayit_kayitid" ManuallyRouted="false" />
+        <AssociationConnector Association="OptikDbModel.FK_dbo_satis_dbo_kayit_Kayitid" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="OptikDbModel.AdminGiris" Width="1.5" PointX="7.625" PointY="10.625" />
+        <EntityTypeShape EntityType="OptikDbModel.GenelLog" Width="1.5" PointX="1.75" PointY="3.375" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

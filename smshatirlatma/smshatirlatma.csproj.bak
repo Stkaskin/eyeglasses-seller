@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F491EAE0-A5CA-491B-A827-8450730B4A40}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>smshatirlatma</RootNamespace>
+    <AssemblyName>smshatirlatma</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v20.2, Version=20.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.Desktop.v20.2, Version=20.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v20.2, Version=20.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v20.2.Core, Version=20.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.SpellChecker.v20.2.Core, Version=20.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Tutorials.v20.2, Version=20.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DevExpress 20.2\Components\Bin\Framework\DevExpress.Tutorials.v20.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v20.2, Version=20.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v20.2, Version=20.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v20.2, Version=20.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v20.2, Version=20.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v20.2, Version=20.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v20.2, Version=20.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v20.2, Version=20.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v20.2.Core, Version=20.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v20.2.Core.Desktop, Version=20.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraSpellChecker.v20.2, Version=20.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FakeData, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FakeData.1.0.0\lib\FakeData.dll</HintPath>
+    </Reference>
+    <Reference Include="LoremNET, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Lorem.NET.1.0.6\lib\net40\LoremNET.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomMessage.Designer.cs">
+      <DependentUpon>CustomMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AnaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnaForm.Designer.cs">
+      <DependentUpon>AnaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Ekle\YeniGozluk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Ekle\YeniGozluk.Designer.cs">
+      <DependentUpon>YeniGozluk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Ekle\YeniKayit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Ekle\YeniKayit.Designer.cs">
+      <DependentUpon>YeniKayit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Ekle\YeniSatis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Ekle\YeniSatis.Designer.cs">
+      <DependentUpon>YeniSatis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\OtheirsForms\CamTip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\OtheirsForms\CamTip.Designer.cs">
+      <DependentUpon>CamTip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\OtheirsForms\Gozluk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\OtheirsForms\Gozluk.Designer.cs">
+      <DependentUpon>Gozluk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\OtheirsForms\Marka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\OtheirsForms\Marka.Designer.cs">
+      <DependentUpon>Marka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\OtheirsForms\Sekil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\OtheirsForms\Sekil.Designer.cs">
+      <DependentUpon>Sekil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Satis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Satis.Designer.cs">
+      <DependentUpon>Satis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Musteri\MusteriListeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Musteri\MusteriListeForm.Designer.cs">
+      <DependentUpon>MusteriListeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\dgwManager.cs" />
+    <Compile Include="Manager\KayitManager.cs" />
+    <Compile Include="Manager\MessageManager.cs" />
+    <Compile Include="menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menu.Designer.cs">
+      <DependentUpon>menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Models\GozlukModel.cs" />
+    <Compile Include="Model\Models\ModelDb.cs" />
+    <Compile Include="Model\DataBase\OptikVeritabani.cs" />
+    <Compile Include="Model\OtheirsTable\CamTipleri.cs" />
+    <Compile Include="Model\OtheirsTable\Marka.cs" />
+    <Compile Include="Model\OtheirsTable\MesajKontrol.cs" />
+    <Compile Include="Model\OtheirsTable\SekilTipi.cs" />
+    <Compile Include="Model\Table\Borc.cs" />
+    <Compile Include="Model\Table\Gozluk.cs" />
+    <Compile Include="Model\Table\kayit.cs" />
+    <Compile Include="Model\Table\satis.cs" />
+    <Compile Include="Model\Table\SMS\BorcMesaj.cs" />
+    <Compile Include="Model\Table\SMS\Sms.cs" />
+    <Compile Include="Model\Table\SMS\SMSTekrarSatınAlım.cs" />
+    <Compile Include="Model\Table\SMS\SmsTurMesajları.cs" />
+    <Compile Include="Model\Table\SMS\SMSÖzelMesaj.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\Modules\Gozluk\ucCam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Modules\Gozluk\ucCam.Designer.cs">
+      <DependentUpon>ucCam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Modules\Gozluk\ucGozlukler.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Modules\Gozluk\ucGozlukler.Designer.cs">
+      <DependentUpon>ucGozlukler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Modules\Gozluk\ucMarka.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Modules\Gozluk\ucMarka.Designer.cs">
+      <DependentUpon>ucMarka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Modules\Gozluk\ucSekil.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Modules\Gozluk\ucSekil.Designer.cs">
+      <DependentUpon>ucSekil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Modules\Musteri\ucBorclar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Modules\Musteri\ucBorclar.Designer.cs">
+      <DependentUpon>ucBorclar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Modules\Musteri\ucMusteriler.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Modules\Musteri\ucMusteriler.Designer.cs">
+      <DependentUpon>ucMusteriler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Modules\Musteri\ucSatislar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Modules\Musteri\ucSatislar.Designer.cs">
+      <DependentUpon>ucSatislar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Modules\Sms\ucSmsGonder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Modules\Sms\ucSmsGonder.Designer.cs">
+      <DependentUpon>ucSmsGonder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Modules\Sms\ucSmsListesi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Modules\Sms\ucSmsListesi.Designer.cs">
+      <DependentUpon>ucSmsListesi.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CustomMessage.resx">
+      <DependentUpon>CustomMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnaForm.resx">
+      <DependentUpon>AnaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Ekle\YeniSatis.resx">
+      <DependentUpon>YeniSatis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\OtheirsForms\CamTip.resx">
+      <DependentUpon>CamTip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\OtheirsForms\Gozluk.resx">
+      <DependentUpon>Gozluk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\OtheirsForms\Marka.resx">
+      <DependentUpon>Marka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\OtheirsForms\Sekil.resx">
+      <DependentUpon>Sekil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Satis.resx">
+      <DependentUpon>Satis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Musteri\MusteriListeForm.resx">
+      <DependentUpon>MusteriListeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu.resx">
+      <DependentUpon>menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI\Modules\Gozluk\ucCam.resx">
+      <DependentUpon>ucCam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Modules\Gozluk\ucGozlukler.resx">
+      <DependentUpon>ucGozlukler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Modules\Gozluk\ucMarka.resx">
+      <DependentUpon>ucMarka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Modules\Gozluk\ucSekil.resx">
+      <DependentUpon>ucSekil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Modules\Musteri\ucBorclar.resx">
+      <DependentUpon>ucBorclar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Modules\Musteri\ucMusteriler.resx">
+      <DependentUpon>ucMusteriler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Modules\Musteri\ucSatislar.resx">
+      <DependentUpon>ucSatislar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Modules\Sms\ucSmsGonder.resx">
+      <DependentUpon>ucSmsGonder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Modules\Sms\ucSmsListesi.resx">
+      <DependentUpon>ucSmsListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>

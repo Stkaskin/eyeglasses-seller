@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OptikDbModelStoreContainer" CdmEntityContainer="OptikDbEntities">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="OptikDbModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Borc">
+      <EntityTypeMapping TypeName="OptikDbModel.Borc">
+        <MappingFragment StoreEntitySet="Borc">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="islemturu" ColumnName="islemturu" />
+          <ScalarProperty Name="zaman" ColumnName="zaman" />
+          <ScalarProperty Name="kayitid" ColumnName="kayitid" />
+          <ScalarProperty Name="satisid" ColumnName="satisid" />
+          <ScalarProperty Name="tutar" ColumnName="tutar" />
+          <ScalarProperty Name="alacakzaman" ColumnName="alacakzaman" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CamTipleri">
+      <EntityTypeMapping TypeName="OptikDbModel.CamTipleri">
+        <MappingFragment StoreEntitySet="CamTipleri">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="CamKodu" ColumnName="CamKodu" />
+          <ScalarProperty Name="aktif" ColumnName="aktif" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gozluk">
+      <EntityTypeMapping TypeName="OptikDbModel.Gozluk">
+        <MappingFragment StoreEntitySet="Gozluk">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="kod" ColumnName="kod" />
+          <ScalarProperty Name="adet" ColumnName="adet" />
+          <ScalarProperty Name="sekilid" ColumnName="sekilid" />
+          <ScalarProperty Name="camid" ColumnName="camid" />
+          <ScalarProperty Name="markaid" ColumnName="markaid" />
+          <ScalarProperty Name="gonderim" ColumnName="gonderim" />
+          <ScalarProperty Name="aktif" ColumnName="aktif" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kayit">
+      <EntityTypeMapping TypeName="OptikDbModel.kayit">
+        <MappingFragment StoreEntitySet="kayit">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="soyad" ColumnName="soyad" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+          <ScalarProperty Name="alim" ColumnName="alim" />
+          <ScalarProperty Name="sonrakialim" ColumnName="sonrakialim" />
+          <ScalarProperty Name="hak" ColumnName="hak" />
+          <ScalarProperty Name="smsgonderim" ColumnName="smsgonderim" />
+          <ScalarProperty Name="smsdurum" ColumnName="smsdurum" />
+          <ScalarProperty Name="aktif" ColumnName="aktif" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Marka">
+      <EntityTypeMapping TypeName="OptikDbModel.Marka">
+        <MappingFragment StoreEntitySet="Marka">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="Markakodu" ColumnName="Markakodu" />
+          <ScalarProperty Name="aktif" ColumnName="aktif" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MesajKontrol">
+      <EntityTypeMapping TypeName="OptikDbModel.MesajKontrol">
+        <MappingFragment StoreEntitySet="MesajKontrol">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="kayitid" ColumnName="kayitid" />
+          <ScalarProperty Name="mesaj" ColumnName="mesaj" />
+          <ScalarProperty Name="durum" ColumnName="durum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="satis">
+      <EntityTypeMapping TypeName="OptikDbModel.satis">
+        <MappingFragment StoreEntitySet="satis">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tutar" ColumnName="tutar" />
+          <ScalarProperty Name="zaman" ColumnName="zaman" />
+          <ScalarProperty Name="Kayitid" ColumnName="Kayitid" />
+          <ScalarProperty Name="Gozlukid" ColumnName="Gozlukid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SekilTipi">
+      <EntityTypeMapping TypeName="OptikDbModel.SekilTipi">
+        <MappingFragment StoreEntitySet="SekilTipi">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="aktif" ColumnName="aktif" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sms">
+      <EntityTypeMapping TypeName="OptikDbModel.Sms">
+        <MappingFragment StoreEntitySet="Sms">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="özel" ColumnName="özel" />
+          <ScalarProperty Name="zaman" ColumnName="zaman" />
+          <ScalarProperty Name="mesajmetni" ColumnName="mesajmetni" />
+          <ScalarProperty Name="kisiadı" ColumnName="kisiadı" />
+          <ScalarProperty Name="kisitel" ColumnName="kisitel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="OptikDbModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdminGiris">
+      <EntityTypeMapping TypeName="OptikDbModel.AdminGiris">
+        <MappingFragment StoreEntitySet="AdminGiris">
+          <ScalarProperty Name="parola" ColumnName="parola" />
+          <ScalarProperty Name="kullaniciadi" ColumnName="kullaniciadi" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GenelLog">
+      <EntityTypeMapping TypeName="OptikDbModel.GenelLog">
+        <MappingFragment StoreEntitySet="GenelLog">
+          <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+          <ScalarProperty Name="zaman" ColumnName="zaman" />
+          <ScalarProperty Name="tablo_id" ColumnName="tablo_id" />
+          <ScalarProperty Name="tablo" ColumnName="tablo" />
+          <ScalarProperty Name="islem" ColumnName="islem" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
