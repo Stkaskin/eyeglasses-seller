@@ -1,8 +1,24 @@
 # eyeglasses-seller
  C# and devexpress eyeglasses seller , 
 
+C# 
+Mvc
+Database First
+SMS api support 
 Devexpress 21.1 kullanılmıştır.
 
+Error --- Alacağınız hatalar.
+İsim parçalama methodu çalışmayabilir. 
+
+Kurulum
+1. programı açın
+2. otomatik veritabanı olaşacaktır 
+3. veriler otomatik yüklenecektir.
+4. otomatik yüklenmediği takdirde el ile girmeniz gerekir.
+5. giris gerinde k.adi :talas parola:751 yazmanız hızlı giriş yapmanızı sağlayacaktır.
+
+
+Detaylar
 Bu proje Türkçe yazılmıştır.
 Proje Gözlük satıcısı için hazırlanmıştır.
 Amacı müşterilere belirli bir zamandan sonra mesaj göndermektir.
