@@ -6,9 +6,7 @@ Mvc
 Database First
 SMS api support 
 Devexpress 21.1 kullanılmıştır.
-
-Error --- Alacağınız hatalar.
-İsim parçalama methodu çalışmayabilir. 
+ 
 
 Kurulum
 1. programı açın
